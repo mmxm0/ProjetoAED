@@ -1,6 +1,3 @@
-from geradorCPF import *
-from ClasseLivro import *
-from ClasseUsuraio import *
 class NoArvoreVp():
     def __init__(self, chave, valor, cor):
         self._chave = chave
@@ -303,30 +300,3 @@ class ArvoreVP:
         string = self.strPercorrer(self._raiz)
         return '[' + string[:-2] + ']'
 
-
-arvoreLivros = ArvoreVP()
-arq1 = open("arvore-livros.txt","r")
-leitura = arq1.readline()
-entrada = leitura[1:-1:]
-entrada = entrada.replace(" ","")
-entrada = entrada.split(",")
-for i in entrada:
-    dados = i.split(":")
-    arvoreLivros.adicionar(int(dados[0]),dados[1]) # com dados[1] NÃO ESTÁ ADICIONANDO O OBJETO LIVRO!!!!!!!!!!
-livro = Livro("Algoritmos","Cormen","290390assda")
-arvoreLivros.adicionar(90,livro)
-
-arq1.close()
-
-arvoreUsuario = ArvoreVP()
-arq = open("arvore-user.txt","r")
-leitura2 = arq.readline()
-entrada2 = leitura[1:-1:]
-entrada2 = entrada2.replace(" ","")
-entrada2 = entrada2.split(",")
-for j in entrada2:
-    dadosuser = j.split(":")
-    arvoreUsuario.adicionar(int(dadosuser[0]),dados[1]) # com dadosuser[1] NÃO ESTÁ ADICIONANDO O OBJETO USUARIO APENAS O CPF!!!!
-
-arq.close()
-print(arvoreUsuario)
