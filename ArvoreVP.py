@@ -1,3 +1,4 @@
+from ClasseLivro import *
 class NoArvoreVp():
     def __init__(self, chave, valor, cor):
         self._chave = chave
@@ -299,15 +300,13 @@ class ArvoreVP:
         return '[' + string[:-2] + ']'
 
 
-arvore = ArvoreVP()
-for i in range(1, 90):
-    arvore.adicionar(i, 'xxx')
-print(arvore.getRaiz().getChave())
-print(arvore)
-arvore.deletar(10)
-arvore.deletar(19)
-arvore.deletar(1)
-print(arvore)
-print(arvore.getRaiz().getChave())
-arvore.deletar(32)
-print(arvore.getRaiz().getChave())
+arvoreLivros = ArvoreVP()
+for i in range(80):
+    livro = Livro(None,None,geradorCodigo())
+    arvoreLivros.adicionar(i,livro)
+arq = open("arvore-livros.txt","w")
+arq.write(str(arvoreLivros))
+arq1 = open("arvore-livros.txt","r")
+leitura =arq1.read()
+print(leitura)
+arq1.close()
