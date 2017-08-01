@@ -8,6 +8,7 @@ class Usuario:
         self.__cpf = cpf
         self.__situacao = situacao
         self.__qttLivros = qttLivros
+        self.__listaLivros = []
         Usuario.idd += 1
 
     def getNome(self):
@@ -45,6 +46,12 @@ class Usuario:
 
     def getIdd(self):
         return Usuario.idd
+
+    def getListaLivros(self):
+        return self.__listaLivros
+
+    def setEMlistaLivros(self, objLivro):
+        self.__listaLivros.append(objLivro)
 
     def __repr__(self):
         return self.__cpf
