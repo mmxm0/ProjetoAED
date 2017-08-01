@@ -8,6 +8,7 @@ class Livro:
         self.__autor = autor
         Livro.idd +=1
         self.__codLivro = cod_de_barras
+        self.__qtddExemplar = 3
 
     def getTitulo(self):
         return self.__titulo
@@ -21,6 +22,9 @@ class Livro:
     def getCodBarras(self):
         return self.__codLivro
 
+    def getQtddExemplar(self):
+        return self.__qtddExemplar
+
     def setTitulo(self,titulo):
         self.__titulo = titulo
 
@@ -29,6 +33,9 @@ class Livro:
 
     def setCodLivro(self,cod):
         self.__codLivro = cod
+
+    def setExemplar(self,x=-1):
+        self.__qtddExemplar +=x
 
     def __repr__(self):
         #return str(self.__titulo).title()+" - "+str(self.__autor).title()
