@@ -2,12 +2,12 @@ import string
 import random
 class Usuario:
     idd = 0
-    def __init__(self,nome=None,curso=None,cpf=None,situacao = None,qttLivros = None):
+    def __init__(self,nome=None,curso=None,cpf=None):
         self.__nome = nome
         self.__curso = curso
         self.__cpf = cpf
-        self.__situacao = situacao
-        self.__qttLivros = qttLivros
+        self.__situacao = True
+        self.__qttLivros = len(self.__listaLivros)
         self.__listaLivros = []
         Usuario.idd += 1
 
@@ -38,9 +38,6 @@ class Usuario:
     def getQttLivros(self):
         return self.__qttLivros
 
-    def setQttLivros(self,novo):
-        self.__qttlivros = novo
-
     def setIdd(self):
         Usuario.idd -= 1
 
@@ -52,6 +49,9 @@ class Usuario:
 
     def setEMlistaLivros(self, objLivro):
         self.__listaLivros.append(objLivro)
+
+    def removeLivroListaLivros(self,objLivro):
+        self.__listaLivros.pop(objLivro)
 
     def __repr__(self):
         return self.__cpf
