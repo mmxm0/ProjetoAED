@@ -1,4 +1,6 @@
+from geradorCPF import *
 from ClasseLivro import *
+from ClasseUsuraio import *
 class NoArvoreVp():
     def __init__(self, chave, valor, cor):
         self._chave = chave
@@ -317,3 +319,15 @@ print(arvoreLivros.pesquisar(90))
 print(arvoreLivros)
 print(entrada)
 arq1.close()
+
+arvoreUsuario = ArvoreVP()
+arq = open("arvore-user.txt","w")
+for i in range(15):
+    cpf_list = geraListaCPF()
+    cpf = geradorCPF(cpf_list)
+    user = Usuario(None,None,cpf,True,0)
+    arvoreUsuario.adicionar(i,user)
+
+arq.write(str(arvoreUsuario))
+arq.close()
+print(arvoreUsuario)

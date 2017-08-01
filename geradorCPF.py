@@ -26,9 +26,3 @@ def geradorCPF(lista_CPF):
     for i in lista_CPF:
         cpf+=str(i)
     return cpf
-arq = open("CPFs","w")
-for i in range(5):
-    cpf_list = geraListaCPF()
-    cpf = geradorCPF(cpf_list)
-    arq.write(cpf+"\n")
-arq.close()

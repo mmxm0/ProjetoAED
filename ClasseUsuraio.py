@@ -46,16 +46,5 @@ class Usuario:
     def getIdd(self):
         return Usuario.idd
 
-    def printar(self,nome,cpf):
-        print(nome,cpf)
-
-
-teste = Usuario()
-teste.setNome("pam")
-teste.setCpf("1234445677")
-print(teste.getIdd())
-a = Usuario("le","vet","123456","1",2)
-print(teste.getIdd())
-teste.setIdd()
-c = Usuario("pier","cvd","11109099009",0,0)
-print(teste.getIdd())
+    def __repr__(self):
+        return self.__cpf
