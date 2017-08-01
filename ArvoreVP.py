@@ -44,6 +44,8 @@ class NoArvoreVp():
     def setCor(self, cor):
         self._cor = cor
 
+    def __repr__(self):
+        return str(self._valor)
 
 class ArvoreVP:
     def __init__(self):
@@ -301,12 +303,17 @@ class ArvoreVP:
 
 
 arvoreLivros = ArvoreVP()
-for i in range(80):
-    livro = Livro(None,None,geradorCodigo())
-    arvoreLivros.adicionar(i,livro)
-arq = open("arvore-livros.txt","w")
-arq.write(str(arvoreLivros))
 arq1 = open("arvore-livros.txt","r")
-leitura =arq1.read()
-print(leitura)
+leitura = arq1.readline()
+entrada = leitura[1:-1:]
+entrada = entrada.replace(" ","")
+entrada = entrada.split(",")
+for i in entrada:
+    dados = i.split(":")
+    arvoreLivros.adicionar(int(dados[0]),dados[1])
+livro = Livro("Algoritmos","Cormen","290390assda")
+arvoreLivros.adicionar(90,livro)
+print(arvoreLivros.pesquisar(90))
+print(arvoreLivros)
+print(entrada)
 arq1.close()
