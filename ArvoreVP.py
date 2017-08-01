@@ -299,4 +299,3 @@ class ArvoreVP:
     def __repr__(self):
         string = self.strPercorrer(self._raiz)
         return '[' + string[:-2] + ']'
-
